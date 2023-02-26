@@ -134,7 +134,7 @@ function App() {
   function refreshBill() {
     const payload = {items: items, coupons: coupons, loyaltyID: loyaltyID?.loyaltyID};
     console.log(payload);
-    fetch('http://localhost:8080/bill', { method: 'POST', headers: {'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+    fetch('/bill', { method: 'POST', headers: {'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       .then((response) => response.json())
       .then((data) => {
         setAlerts(data["alerts"]);
